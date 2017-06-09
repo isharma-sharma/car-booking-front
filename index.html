@@ -1,25 +1,132 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>My first page</title>
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">BOOK YOUR CAR</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="sign-up-btn" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a id="login-btn" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a id="changePassword-btn" href="#"><span class="glyphicon glyphicon-log-in"></span> change-password</a></li>
+        <li><a id="sign-out-btn" href="#"><span class="glyphicon glyphicon-user"></span> Sign-out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End : Nav bar -->
+  <!-- Main content-->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-2">
+        <!-- Left Bar -->
+      </div>
+      <!-- Middle Col-->
+      <div class="col-md-8">
+        <!-- Alerts -->
+        <!--
+         <div class="alert alert-success alert-dismissable" id="success" >
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> <span id="succmsg"></span>
+        </div>
+        <div class="alert alert-danger alert-dismissable" id="error">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong> <span id="errmsg"></span>
+        </div>
+        <!-- End Alerts -->
+        <!-- Login form-->
+        <form id="sign-in" class = "col-md-8">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" name="credentials[email]" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" name="credentials[password]" class="form-control" id="pwd">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+
+        <!-- End :Login form-->
+
+        <!-- sign-up form-->
+
+        <form id="sign-up">
+          <h2>Signup</h2>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" name="credentials[email]" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" name="credentials[password]" class="form-control" id="pwd">
+          </div>
+          <div class="form-group">
+            <label for="pwd">ConfirmPassword:</label>
+            <input type="password" name="credentials[password_confirmation]" class="form-control" id="pwd">
+          </div>
+          <!-- <div class="form-group">
+            <label for="name">full-name:</label>
+            <input type="text" name="credentials[full_name]" class="form-control" id="flnm">
+          </div>
+          <div class="form-group">
+            <label for="phonnum">phone-no.</label>
+            <input type="tel" name="usrtel" class="form-control" id="phnm">
+          </div>
+          <div class="form-group">
+            <label for="add">address.</label>
+            <input type="text" name="credentials[phone-no]" class="form-control" id="adr">
+          </div>
+          <div class="form-group">
+            <label for="dob">date-of-birth</label>
+            <input type="date" name="credentials[birth-date]" class="form-control" id="dob">
+            <input type="submit" value="Send">
+
+          </div> -->
+          <div class="form-group">
+         <!-- <input type="radio" name="gender" value="male" checked> Male<br>
+         <input type="radio" name="gender" value="female"> Female<br>
+         <input type="radio" name="gender" value="other"> Other -->
+         </div>
+          <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+        </form>
+
+        <!-- End :Signup form-->
+        <!---change password form begins here -->
+        <form id="change-password">
+          <h2>CHANGE PASSWORD</h2>
+          <div class="form-group">
+            <label for="pwd"> Old-Password:</label>
+            <input type="password" name="passwords[old]" class="form-control" id="pwd">
+          </div>
+          <div class="form-group">
+            <label for="pwd">New-Password:</label>
+            <input type="password" name="passwords[new]" class="form-control" id="pwd">
+          </div>
+          <button type="submit" class="btn btn-info btn-block ">Submit</button>
+        </form>
+        <!-- change passwordform ends here -->
+<!--customer detail form begins-->
+
+<!--customer detail form ends-->
+
+
+
     </body>
 </html>
