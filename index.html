@@ -38,15 +38,15 @@
       <!-- Middle Col-->
       <div class="col-md-8">
         <!-- Alerts -->
-        <!--
-         <div class="alert alert-success alert-dismissable" id="success" >
+
+         <!-- <div class="alert alert-success alert-dismissable" id="success" >
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <strong>Success!</strong> <span id="succmsg"></span>
-        </div>
-        <div class="alert alert-danger alert-dismissable" id="error">
+        </div> -->
+        <!-- <div class="alert alert-danger alert-dismissable" id="error">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <strong>Error!</strong> <span id="errmsg"></span>
-        </div>
+        </div> -->
         <!-- End Alerts -->
         <!-- Login form-->
         <form id="sign-in" class = "col-md-8">
@@ -81,6 +81,7 @@
             <label for="pwd">ConfirmPassword:</label>
             <input type="password" name="credentials[password_confirmation]" class="form-control" id="pwd">
           </div>
+
           <!-- <div class="form-group">
             <label for="name">full-name:</label>
             <input type="text" name="credentials[full_name]" class="form-control" id="flnm">
@@ -99,11 +100,11 @@
             <input type="submit" value="Send">
 
           </div> -->
-          <div class="form-group">
+          <!-- <div class="form-group"> -->
          <!-- <input type="radio" name="gender" value="male" checked> Male<br>
          <input type="radio" name="gender" value="female"> Female<br>
          <input type="radio" name="gender" value="other"> Other -->
-         </div>
+         <!-- </div> -->
           <button type="submit" class="btn btn-success btn-block">Sign Up</button>
         </form>
 
@@ -122,9 +123,40 @@
           <button type="submit" class="btn btn-info btn-block ">Submit</button>
         </form>
         <!-- change passwordform ends here -->
-<!--customer detail form begins-->
+<!--getAllCars div begins-->
+<div class="col-md-4" id ="alcr">
+            <!--show button to show cars grid starts-->
+  <button id="allcars"class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>CARS-LIST</button>
+  <!-- <button id="clearBooksButton" class="btn btn-default">Clear Books!</button> -->
+            <!--show button to show carsgrid ends-->
 
-<!--customer detail form ends-->
+          </div>
+        <!--getAllCars div ends-->
+<!--customer  form  to enter his car details begins-->
+<form id="cardtl">
+<div class="container" >
+   <div class="form-group">
+    <label for="crmd">Car-Model</label>
+    <input type="text" name="car[model]" class="form-control" id="Crmd">
+  </div>
+  <div class="form-group">
+    <label for="coc">Color-of-car</label>
+    <input type="text" name="car[color]" class="form-control" id="coc">
+  </div>
+  <div class="form-group">
+    <label for="lpn">licence-plate-no</label>
+    <input type="text" name="car[lcp]" class="form-control" id="lpn">
+  </div>
+  <div class="form-group">
+    <label for="rpnd">Repair-needed</label>
+    <input type="text" name="car[repair]" class="form-control" id="rpnd">
+  </div>
+      <button type="submit" class="btn btn-info btn-block ">Submit</button>
+
+</div>
+
+</form>
+<!--customer detail form to enter his car detailends-->
 
 
 

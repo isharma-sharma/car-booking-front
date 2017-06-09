@@ -46,10 +46,42 @@ const signOut = function () {
   })
   .then(console.log)
 }
-
+const createCar = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/cars',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    },
+    data
+  })
+    .then(console.log)
+    // .then((response) => {
+    //   store.carId = response.car.id
+    //   return store
+    // })
+    // .then(console.log)
+}
+const getAllCars = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/cars',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    }
+  })
+  // .then((response) => {
+  //   for (let g in response.games) {
+  //     store.gamesList.push(response.games[g].id)
+  //   }
+  .then(console.log)
+  // })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createCar,
+  getAllCars
 }

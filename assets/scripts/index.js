@@ -23,27 +23,32 @@ $(document).ready(function () {
   $('#sign-in').show()
   $('#sign-up').hide()
   $('#change-password').hide()
+  $('#cardtl').hide()
 
   // Login function
   $('#login-btn').click(function () {
     $('#sign-in').show()
     $('#sign-up').hide()
     $('#change-password').hide()
+    $('#cardtl').show()
   })
   // sign-up function
   $('#sign-up-btn').click(function () {
     $('#sign-up').show()
     $('#sign-in').hide()
     $('#change-password').hide()
+    $('#cardtl').hide()
   })
   $('#changePassword-btn').click(function () {
     $('#sign-up').hide()
     $('#sign-in').hide()
     $('#change-password').show()
+    $('#cardtl').hide()
   })
   $('#sign-out-btn').click(function () {
     $('#sign-in').show()
     $('#sign-up').hide()
     $('#change-password').hide()
+    $('#cardtl').hide()
   })
 })

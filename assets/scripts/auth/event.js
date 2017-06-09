@@ -36,12 +36,29 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
    .catch(ui.signOutFailure)
 }
+const onCreateCar = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // debugger
+  api.createCar(data)
+    .then(ui.createCarSuccess)
+    .catch(ui.createCarfailure)
+}
+const onGetAllCars = function (event) {
+  event.preventDefault()
+  // const data = getFormFields(event.target)
+  api.getAllCars()
+    .then(ui.getAllCarsSuccess)
+    .catch(ui.getAllCarsFailure)
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out-btn').on('click', onSignOut)
+  $('#cardtl').on('submit', onCreateCar)
+  $('#allcars').on('click', onGetAllCars)
 }
 
 module.exports = {

@@ -11,6 +11,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   // $('#show-game-panel').show() will add the id of add car form
   $('#sign-in').hide()
+  $('#cardtl').show()
   // $('#userId').text(store.userId) will be used to show id of the person who has added the car
 }
 
@@ -19,7 +20,7 @@ const signInFailure = (error) => {
 }
 
 const ChangepasswordSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('#change-password').hide()
 }
 
@@ -31,7 +32,7 @@ const signOutSuccess = (data) => {
   $('#sign-up').hide()
   // $('#game-board').hide()
   $('#change-password').hide()
-  // $('#show-game-panel').hide()
+  // $('#show-game-panel').hide()$('#change-password').hide()
   console.log('on signOutSuccess')
 }
 
@@ -41,6 +42,32 @@ const signOutFailure = (error) => {
   // $('#error').show()
   // $('#errmsg').text('Failed')
 }
+const createCarSuccess = (data) => {
+  console.log(data)
+  // $('#gameId').text('GAME ID:' + store.gameId)
+  // store.store.gameArray = []
+  // store.over = false
+  // $('.Winner').text('')
+  // $('#success').show()
+  // $('#error').hide()
+  // $('#succmsg').text('New game with id -' + store.gameId + ' created successfully.')
+  // console.log('updateGameSuccess')
+  // $('.box').css('pointer-events', 'auto')
+  // store.player = 'x'
+}
+const createCarFailure = (error) => {
+  console.log(error)
+}
+const getAllCarsSuccess = (data) => {
+  console.log(data)
+}
+
+const getAllCarsFailure = (error) => {
+  console.log(error)
+  // $('#success').hide()
+  // $('#error').show()
+  // $('#errmsg').text('Failed - ' + error)
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -49,5 +76,10 @@ module.exports = {
   ChangepasswordSuccess,
   ChangepasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  createCarSuccess,
+  createCarFailure,
+  getAllCarsSuccess,
+  getAllCarsFailure
+
 }
