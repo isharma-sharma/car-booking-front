@@ -60,7 +60,7 @@ const createCar = function (data) {
       store.carId = response.car.id
       return store
     })
-    // .then(console.log)
+    // .then(console.log (store.carId))
 }
 const getAllCars = function () {
   return $.ajax({
@@ -88,10 +88,10 @@ const getAllCars = function () {
 //     data
 //   })
 // }
-const updateCarInfo = function (model, color, lcp, repair) {
-  console.log('inside updateGame index is ', model, color, lcp, repair)
+const updateCarInfo = function (repair) {
+  console.log('inside updateGame repair is ', repair)
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.userId,
+    url: config.apiOrigin + '/cars/' + store.carId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.userToken
@@ -99,14 +99,22 @@ const updateCarInfo = function (model, color, lcp, repair) {
     data: {
       'car': {
         'id': {
-          'model': model,
-          'color': color,
-          'lcp': lcp,
           'repair': repair
         }
       }
     }
+    .then(console.log)
   })
+}
+const removeCar = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/cars/' + store.carId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    }
+  })
+  .then(console.log)
 }
 
 module.exports = {
@@ -116,5 +124,6 @@ module.exports = {
   signOut,
   createCar,
   getAllCars,
-  updateCarInfo
+  updateCarInfo,
+  removeCar
 }

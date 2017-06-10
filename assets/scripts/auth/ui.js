@@ -1,4 +1,5 @@
 const api = require('./api')
+const event = require('./event.js')
 const store = require('../store')
 const showCarsTemplate = require('../templates/car-listing.handlebars')
 
@@ -64,11 +65,12 @@ const getAllCarsSuccess = (data) => {
   console.log(data)
   const showcarsHtml = showCarsTemplate({ cars: data.cars })
   $('#alcr').append(showcarsHtml)
-  $('.removebtn').on('click', function () {
-    if (window.confirm('Do you really want to hide this car?')) {
-      $(this).parent().hide()
-    }
-  })
+
+  // $('.removebtn').on('click', function () {
+  //   if (window.confirm('Do you really want to hide this car?')) {
+  //     $(this).parent().hide()
+  //   }
+  // })
 }
 
 const getAllCarsFailure = (error) => {
@@ -82,6 +84,17 @@ const onUpdateCarSuccess = (data) => {
 }
 
 const onUpdateCarFailure = (error) => {
+  console.error(error)
+}
+
+const removeCarSuccess = (data) => {
+  $('#sign-in').show()
+  $('#sign-up').hide()
+  $('#change-password').hide()
+
+  console.log('on RemoveCarSuccess')
+}
+const removeCarFailure = (error) => {
   console.error(error)
 }
 module.exports = {
@@ -98,5 +111,7 @@ module.exports = {
   getAllCarsSuccess,
   getAllCarsFailure,
   onUpdateCarSuccess,
-  onUpdateCarFailure
+  onUpdateCarFailure,
+  removeCarSuccess,
+  removeCarFailure
 }

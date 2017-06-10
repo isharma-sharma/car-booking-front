@@ -1,5 +1,5 @@
 const getFormFields = require('../../../lib/get-form-fields')
-
+const removebton = require('../templates/car-listing.handlebars')
 const api = require('./api')
 const ui = require('./ui')
 // const store = require('../store')
@@ -54,11 +54,24 @@ const onGetAllCars = function (event) {
 const onUpdateCar = function (event) {
   event.preventDefault()
   console.log('is handler working')
-  api.updateCarInfo(model, color, lcp, repair)
+  const data = getFormFields(event.target)
+  // const id = event.target.getAttribute('data-id')
+  api.updateCarInfo(data)
   .then(ui.onUpdateCarSuccess)
 .catch(ui.onUpdateCarfailure)
 }
 
+const onRemoveCar = function (event) {
+  event.preventDefault()
+  console.log(event)
+  const id = event.target.getAttribute('removebton.data-id')
+  console.log('this is what we need')
+  console.log(id)
+  api.removeCar(id)
+
+   .then(ui.removeCarSuccess)
+   .catch(ui.removeCarFailure)
+}
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -67,6 +80,8 @@ const addHandlers = () => {
   $('#cardtl').on('submit', onCreateCar)
   $('#allcars').on('click', onGetAllCars)
   $('#updtcars').on('click', onUpdateCar)
+  $('body').on('click', '.removebtn', onRemoveCar)
+  $('#updetail').on('submit', onUpdateCar)
 }
 
 module.exports = {

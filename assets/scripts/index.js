@@ -16,14 +16,15 @@ const authEvents = require('./auth/event.js')
 
 $(() => {
   authEvents.addHandlers()
-})
+// })
 
-$(document).ready(function () {
+// $(document).ready(function () {
   // On first load
   $('#sign-in').show()
   $('#sign-up').hide()
   $('#change-password').hide()
   $('#cardtl').hide()
+  $('#updetail').hide()
 
   // Login function
   $('#login-btn').click(function () {
@@ -53,5 +54,11 @@ $(document).ready(function () {
   })
   $('#allcars').click(function () {
     $('#cardtl').hide()
+    $('#allcars').toggle()
+  })
+  $('#updtcars').click(function () {
+    $('#cardtl').hide()
+    $('#updetail').show()
+    console.log('update cars hide form')
   })
 })
