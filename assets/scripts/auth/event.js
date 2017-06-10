@@ -64,7 +64,7 @@ const onUpdateCar = function (event) {
 const onRemoveCar = function (event) {
   event.preventDefault()
   console.log(event)
-  const id = event.target.getAttribute('removebton.data-id')
+  const id = $(event.target).parent().parent().attr('data-id')
   console.log('this is what we need')
   console.log(id)
   api.removeCar(id)

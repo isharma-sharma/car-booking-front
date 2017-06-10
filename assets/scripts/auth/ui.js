@@ -46,18 +46,8 @@ const signOutFailure = (error) => {
 }
 const createCarSuccess = (data) => {
   console.log(data)
-  // $('#whatevertheidis').append("text")
-  // $('#gameId').text('GAME ID:' + store.gameId)
-  // store.store.gameArray = []
-  // store.over = false
-  // $('.Winner').text('')
-  // $('#success').show()
-  // $('#error').hide()
-  // $('#succmsg').text('New game with id -' + store.gameId + ' created successfully.')
-  // console.log('updateGameSuccess')
-  // $('.box').css('pointer-events', 'auto')
-  // store.player = 'x'
 }
+
 const createCarFailure = (error) => {
   console.log(error)
 }
@@ -65,19 +55,10 @@ const getAllCarsSuccess = (data) => {
   console.log(data)
   const showcarsHtml = showCarsTemplate({ cars: data.cars })
   $('#alcr').append(showcarsHtml)
-
-  // $('.removebtn').on('click', function () {
-  //   if (window.confirm('Do you really want to hide this car?')) {
-  //     $(this).parent().hide()
-  //   }
-  // })
 }
 
 const getAllCarsFailure = (error) => {
   console.log(error)
-  // $('#success').hide()
-  // $('#error').show()
-  // $('#errmsg').text('Failed - ' + error)
 }
 const onUpdateCarSuccess = (data) => {
   console.log(data)
@@ -91,6 +72,7 @@ const removeCarSuccess = (data) => {
   $('#sign-in').show()
   $('#sign-up').hide()
   $('#change-password').hide()
+  // api.getAllCars()
 
   console.log('on RemoveCarSuccess')
 }

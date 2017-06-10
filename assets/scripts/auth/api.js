@@ -1,7 +1,7 @@
 'use strict'
 const config = require('../config')
 const store = require('../store.js')
-
+const ui = require('./ui')
 const signUp = function (data) {
   console.log('data is', data)
   return $.ajax({
@@ -57,7 +57,7 @@ const createCar = function (data) {
   })
     .then(console.log)
     .then((response) => {
-      store.carId = response.car.id
+      store.carId = response.cars.id
       return store
     })
     // .then(console.log (store.carId))
@@ -106,15 +106,29 @@ const updateCarInfo = function (repair) {
     .then(console.log)
   })
 }
+// const removeCar = function (data) {
+//   console.log('data is', data)
+//   console.log('store.carId is', store.carId)
+//   return $.ajax({
+//     url: config.apiOrigin + '/cars/' + data,
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + store.userToken
+//     }
+//   })
+//   .then(ui.onRemoveCarSuccess)
+// }
 const removeCar = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/cars/' + store.carId,
+    url: config.apiOrigin + '/cars/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.userToken
     }
   })
-  .then(console.log)
+  .then((response) => { // this will run if the DELETE request is successful
+    $("ul[data-id='" + data + "']").remove() // remove the element with jQuery
+  })
 }
 
 module.exports = {

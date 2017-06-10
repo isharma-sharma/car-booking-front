@@ -61,4 +61,8 @@ $(() => {
     $('#updetail').show()
     console.log('update cars hide form')
   })
+
+  // $('.removebtn').click(function () {
+  //   ('#allcars').show()
+  // })
 })
