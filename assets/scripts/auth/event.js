@@ -51,6 +51,13 @@ const onGetAllCars = function (event) {
     .then(ui.getAllCarsSuccess)
     .catch(ui.getAllCarsFailure)
 }
+const onUpdateCar = function (event) {
+  event.preventDefault()
+  console.log('is handler working')
+  api.updateCarInfo(model, color, lcp, repair)
+  .then(ui.onUpdateCarSuccess)
+.catch(ui.onUpdateCarfailure)
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -59,6 +66,7 @@ const addHandlers = () => {
   $('#sign-out-btn').on('click', onSignOut)
   $('#cardtl').on('submit', onCreateCar)
   $('#allcars').on('click', onGetAllCars)
+  $('#updtcars').on('click', onUpdateCar)
 }
 
 module.exports = {

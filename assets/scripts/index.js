@@ -51,4 +51,7 @@ $(document).ready(function () {
     $('#change-password').hide()
     $('#cardtl').hide()
   })
+  $('#allcars').click(function () {
+    $('#cardtl').hide()
+  })
 })

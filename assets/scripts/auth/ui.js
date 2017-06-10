@@ -1,5 +1,6 @@
 const api = require('./api')
 const store = require('../store')
+const showCarsTemplate = require('../templates/car-listing.handlebars')
 
 const signUpSuccess = (data) => {
   console.log(data)
@@ -44,6 +45,7 @@ const signOutFailure = (error) => {
 }
 const createCarSuccess = (data) => {
   console.log(data)
+  // $('#whatevertheidis').append("text")
   // $('#gameId').text('GAME ID:' + store.gameId)
   // store.store.gameArray = []
   // store.over = false
@@ -60,6 +62,13 @@ const createCarFailure = (error) => {
 }
 const getAllCarsSuccess = (data) => {
   console.log(data)
+  const showcarsHtml = showCarsTemplate({ cars: data.cars })
+  $('#alcr').append(showcarsHtml)
+  $('.removebtn').on('click', function () {
+    if (window.confirm('Do you really want to hide this car?')) {
+      $(this).parent().hide()
+    }
+  })
 }
 
 const getAllCarsFailure = (error) => {
@@ -67,6 +76,13 @@ const getAllCarsFailure = (error) => {
   // $('#success').hide()
   // $('#error').show()
   // $('#errmsg').text('Failed - ' + error)
+}
+const onUpdateCarSuccess = (data) => {
+  console.log(data)
+}
+
+const onUpdateCarFailure = (error) => {
+  console.error(error)
 }
 module.exports = {
   signUpSuccess,
@@ -80,6 +96,7 @@ module.exports = {
   createCarSuccess,
   createCarFailure,
   getAllCarsSuccess,
-  getAllCarsFailure
-
+  getAllCarsFailure,
+  onUpdateCarSuccess,
+  onUpdateCarFailure
 }

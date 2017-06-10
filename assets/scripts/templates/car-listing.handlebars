@@ -1,0 +1,15 @@
+
+{{#each cars as |car|}}
+
+<!--we are using data id and not id -->
+<ul data-id="{{car.id}}">
+  <li><small>carId:{{car.id}}</small></li>
+  <li><small>Model:{{car.model}}</small></li>
+  <li><small>Color-of-car:{{car.color}}</small></li>
+  <li><small>licence-plate-no:{{car.lcp}}</small></li>
+  <li><small>Repair-needed:{{car.repair}}</small></li>
+  <button class="removebtn">Remove Cars list!</button>
+</ul>
+
+{{/each}}
+I
