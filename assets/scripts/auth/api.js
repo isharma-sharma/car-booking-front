@@ -60,7 +60,6 @@ const createCar = function (data) {
       store.carId = response.cars.id
       return store
     })
-    // .then(console.log (store.carId))
 }
 const getAllCars = function () {
   return $.ajax({
@@ -70,54 +69,23 @@ const getAllCars = function () {
       Authorization: 'Token token=' + store.userToken
     }
   })
-  // .then((response) => {
-  //   for (let g in response.games) {
-  //     store.gamesList.push(response.games[g].id)
-  //   }
-  // .then(console.log)
-  // })
 }
-// const updateCarInfo = function (data) {
-//   console.log('this is the id &data', data)
-//   $.ajax({
-//     url: config.host + '/cars/' + store.carId,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
-const updateCarInfo = function (repair) {
-  console.log('inside updateGame repair is ', repair)
+
+const updateCarInfo = function (id, data) {
+  console.log('inside updateGame repair is ', data)
   return $.ajax({
-    url: config.apiOrigin + '/cars/' + store.carId,
+    url: config.apiOrigin + '/cars/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.userToken
     },
-    data: {
-      'car': {
-        'id': {
-          'repair': repair
-        }
-      }
-    }
-    .then(console.log)
+    data
   })
+    .then((response) => {
+      $("ul[data-id='" + data + "']").update(data)
+    })
 }
-// const removeCar = function (data) {
-//   console.log('data is', data)
-//   console.log('store.carId is', store.carId)
-//   return $.ajax({
-//     url: config.apiOrigin + '/cars/' + data,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.userToken
-//     }
-//   })
-//   .then(ui.onRemoveCarSuccess)
-// }
+
 const removeCar = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/cars/' + data,

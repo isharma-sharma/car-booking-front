@@ -25,6 +25,8 @@ $(() => {
   $('#change-password').hide()
   $('#cardtl').hide()
   $('#updetail').hide()
+  $('#success').hide()
+  $('#error').hide()
 
   // Login function
   $('#login-btn').click(function () {
@@ -32,6 +34,8 @@ $(() => {
     $('#sign-up').hide()
     $('#change-password').hide()
     $('#cardtl').show()
+    $('#success').hide()
+    $('#error').hide()
   })
   // sign-up function
   $('#sign-up-btn').click(function () {
@@ -39,30 +43,37 @@ $(() => {
     $('#sign-in').hide()
     $('#change-password').hide()
     $('#cardtl').hide()
+    $('#success').hide()
+    $('#error').hide()
   })
   $('#changePassword-btn').click(function () {
     $('#sign-up').hide()
     $('#sign-in').hide()
     $('#change-password').show()
     $('#cardtl').hide()
+    $('#success').hide()
+    $('#error').hide()
   })
   $('#sign-out-btn').click(function () {
     $('#sign-in').show()
     $('#sign-up').hide()
     $('#change-password').hide()
     $('#cardtl').hide()
+    $('#success').hide()
+    $('#error').hide()
   })
   $('#allcars').click(function () {
     $('#cardtl').hide()
     $('#allcars').toggle()
+    $('#success').hide()
+    $('#error').hide()
   })
-  $('#updtcars').click(function () {
+  $('.removebtn').click(function () {
+    $('#sign-up').hide()
+    $('#sign-in').hide()
+    $('#change-password').hide()
     $('#cardtl').hide()
-    $('#updetail').show()
-    console.log('update cars hide form')
+    $('#success').hide()
+    $('#error').hide()
   })
-
-  // $('.removebtn').click(function () {
-  //   ('#allcars').show()
-  // })
 })

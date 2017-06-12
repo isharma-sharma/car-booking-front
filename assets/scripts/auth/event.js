@@ -55,8 +55,9 @@ const onUpdateCar = function (event) {
   event.preventDefault()
   console.log('is handler working')
   const data = getFormFields(event.target)
-  // const id = event.target.getAttribute('data-id')
-  api.updateCarInfo(data)
+  const id = $(event.target).parent().parent().attr('data-id')
+  console.log(id, data)
+  api.updateCarInfo(id, data)
   .then(ui.onUpdateCarSuccess)
 .catch(ui.onUpdateCarfailure)
 }
@@ -81,10 +82,10 @@ const addHandlers = () => {
   $('#allcars').on('click', onGetAllCars)
   $('#updtcars').on('click', onUpdateCar)
   $('body').on('click', '.removebtn', onRemoveCar)
-  $('#updetail').on('submit', onUpdateCar)
+  $('body').on('submit', '.updetail', onUpdateCar)
 }
 
 module.exports = {
   addHandlers
-  // winner
+
 }

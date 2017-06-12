@@ -8,7 +8,15 @@
   <li><small>Color-of-car:{{car.color}}</small></li>
   <li><small>licence-plate-no:{{car.lcp}}</small></li>
   <li><small>Repair-needed:{{car.repair}}</small></li>
+  <li><form class="updetail" class = "col-md-8">
+      <div class="form-group">
+        <label for="rpnd">change needed</label>
+        <input type="text" name="car[repair]" class="form-control" id="rep">
+      </div>
+          <button id ="update" type="submit" class="btn btn-info btn-block ">Submit</button>
+  </form></li>
   <li><button class="removebtn" >Remove Cars list!</button></li>
+
 </ul>
 
 {{/each}}

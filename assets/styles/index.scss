@@ -1,7 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-// div {
-//     background: rgb(200, 54, 54); /* fallback */
-//     background: rgba(200, 54, 54, 0.5);
-//   // background:  #bce6df;/* 50% transparent */
-// }
+div {
+    background: rgb(200, 54, 54); /* fallback */
+    background: rgba(200, 54, 54, 0.5);
+  // background:  #bce6df;/* 50% transparent */
+}
+ body{
+   background : url('./image/cars.png');
+  //  background-image: url('paper.gif');
+  font-style: italic;
+ }
+.tog{
+
+}
