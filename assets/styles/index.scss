@@ -1,17 +1,22 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 div {
-    background: rgb(200, 54, 54); /* fallback */
-    background: rgba(200, 54, 54, 0.5);
+    background: rgb(200, 54, 25); /* fallback */
+    background: rgba(200, 54, 34, 0.5);
   // background:  #bce6df;/* 50% transparent */
 }
  body{
-   background : url('./image/cars.png');
-  //  background-image: url('paper.gif');
-  font-style: italic;
-
+   background : url('./image/cars_garage.png');
+   font-style: italic;
  }
+
 #tog{ font-size: 30px;
-  background-color: grey;
+  background-color: lightgrey;
   font-style: italic;
+}
+.removebtn:hover{
+  color: blue;
+}
+.update:hover{
+color: pink;
 }

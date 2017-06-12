@@ -66,13 +66,16 @@ const signOutFailure = (error) => {
 }
 const createCarSuccess = (data) => {
   console.log(data)
-  console.log('craeted a car')
+  console.log('created a car')
   // $('#success').show()
   $('#error').hide()
   // $('#succmsg').text('your car is now added on the list')
 }
 
 const createCarFailure = (error) => {
+  $('#success').hide()
+  $('#error').show()
+  $('#errmsg').text('input all the field')
   console.log(error)
 }
 const getAllCarsSuccess = (data) => {
@@ -95,6 +98,9 @@ const onUpdateCarSuccess = (data) => {
 }
 const onUpdateCarFailure = (error) => {
   console.error(error)
+  $('#success').hide()
+  $('#error').show()
+  $('#errmsg').text('Update failed! try again.')
 }
 
 const removeCarSuccess = (data) => {
@@ -104,8 +110,6 @@ const removeCarSuccess = (data) => {
   $('#success').show()
   $('#error').hide()
   $('#succmsg').text('car has been removed from list')
-  // api.getAllCars()
-
   console.log('on RemoveCarSuccess')
 }
 const removeCarFailure = (error) => {
