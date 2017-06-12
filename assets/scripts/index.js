@@ -33,7 +33,7 @@ $(() => {
     $('#sign-in').show()
     $('#sign-up').hide()
     $('#change-password').hide()
-    $('#cardtl').show()
+    // $('#cardtl').show()
     $('#success').hide()
     $('#error').hide()
   })

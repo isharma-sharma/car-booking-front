@@ -82,7 +82,9 @@ const updateCarInfo = function (id, data) {
     data
   })
     .then((response) => {
-      $("ul[data-id='" + data + "']").update(data)
+      debugger
+      console.log(data, id, response.car.repair)
+      $("ul[data-id='" + id + "']").find('.rep').text(response.car.repair)
     })
 }
 
