@@ -55,9 +55,10 @@ const createCar = function (data) {
     },
     data
   })
-    .then(console.log)
+    // .then(console.log)
     .then((response) => {
-      store.carId = response.cars.id
+      console.log('ajax sucessful')
+      store.carId = response.car.id
       return store
     })
 }
@@ -82,7 +83,6 @@ const updateCarInfo = function (id, data) {
     data
   })
     .then((response) => {
-      debugger
       console.log(data, id, response.car.repair)
       $("ul[data-id='" + id + "']").find('.rep').text(response.car.repair)
     })

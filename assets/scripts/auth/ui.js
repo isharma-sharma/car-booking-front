@@ -23,7 +23,7 @@ const signInSuccess = (data) => {
   $('#success').show()
   $('#error').hide()
   $('#succmsg').text('welcome user')
-  $('#cardtl').show()
+  $('#allcars').show()
   // $('#userId').text(store.userId) will be used to show id of the person who has added the car
 }
 
@@ -32,6 +32,7 @@ const signInFailure = (error) => {
   $('#success').hide()
   $('#error').show()
   $('#errmsg').text('SignIn failed.Please input proper data')
+  $('#cardtl').hide()
 }
 
 const ChangepasswordSuccess = (data) => {
@@ -65,10 +66,10 @@ const signOutFailure = (error) => {
 }
 const createCarSuccess = (data) => {
   console.log(data)
-  $('#success').show()
+  console.log('craeted a car')
+  // $('#success').show()
   $('#error').hide()
-  $('#succmsg').text('your car is now added on the list')
-  $('#cardtl').hide()
+  // $('#succmsg').text('your car is now added on the list')
 }
 
 const createCarFailure = (error) => {
@@ -87,10 +88,6 @@ const getAllCarsFailure = (error) => {
   console.log(error)
 }
 const onUpdateCarSuccess = (data) => {
-  $('#updatemsg').text('repair updated.')
-  $('#update').click(function () {
-    $('body')('.updetail').hide()
-  })
   console.log(data)
   $('#success').show()
   $('#error').hide()
@@ -101,7 +98,7 @@ const onUpdateCarFailure = (error) => {
 }
 
 const removeCarSuccess = (data) => {
-  $('#sign-in').show()
+  $('#sign-in').hide()
   $('#sign-up').hide()
   $('#change-password').hide()
   $('#success').show()

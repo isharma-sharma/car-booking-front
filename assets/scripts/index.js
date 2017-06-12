@@ -27,13 +27,13 @@ $(() => {
   $('#updetail').hide()
   $('#success').hide()
   $('#error').hide()
+  $('#allcars').hide()
 
   // Login function
   $('#login-btn').click(function () {
     $('#sign-in').show()
     $('#sign-up').hide()
-    $('#change-password').hide()
-    // $('#cardtl').show()
+    $('#cardtl').hide()
     $('#success').hide()
     $('#error').hide()
   })
@@ -77,3 +77,10 @@ $(() => {
     $('#error').hide()
   })
 })
+$('#updt').click(function () {
+  $('#cardtl').hide()
+  $('#success').show()
+  $('#succmsg').text('your car is now added on the list')
+})
+
+// $('body').on('click', '#login-btn', $('#tog').hide())
