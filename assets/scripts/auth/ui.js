@@ -2,6 +2,7 @@ const api = require('./api')
 const event = require('./event.js')
 const store = require('../store')
 const showCarsTemplate = require('../templates/car-listing.handlebars')
+const showSingleCarTemplate=require('../templates/single_car.handlebars')
 
 const signUpSuccess = (data) => {
   console.log(data)
@@ -73,12 +74,16 @@ const signOutFailure = (error) => {
   $('#errmsg').text('Signout failed.')
 }
 const createCarSuccess = (data) => {
+  // $('.empfor', 'input[type="text"]').empty()
   console.log(data)
-  console.log('created a car')
-  // $('#success').show()
   $('#error').hide()
   // $('#succmsg').text('your car is now added on the list')
   $('#crtnewcar').show()
+  const showsinglecarHtml = showSingleCarTemplate({car: data.car})
+  // const showcarsHtml = showCarsTemplate({ cars: data.car })
+  $('#alcr').append(showsinglecarHtml)
+  console.log('create a car done')
+  debugger
 }
 
 const createCarFailure = (error) => {
@@ -89,6 +94,7 @@ const createCarFailure = (error) => {
 }
 const getAllCarsSuccess = (data) => {
   console.log(data)
+  $('.bleh').empty()
   const showcarsHtml = showCarsTemplate({ cars: data.cars })
   $('#alcr').append(showcarsHtml)
   $('#success').show()

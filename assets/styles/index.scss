@@ -12,9 +12,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
  }
 
 #tog{ font-size: 30px;
-  background-color: lightgrey;
+
   font-style: italic;
+  float:left;
 }
+#tcar{font-size: 30px;
+
+  font-style: italic;
+  float:left;
+
+}
+
 .removebtn:hover{
   color: blue;
 }

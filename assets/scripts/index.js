@@ -35,6 +35,7 @@ $(() => {
   // Login function
   $('#login-btn').click(function () {
     $('#sign-in').show()
+    $('#allcars').show()
     $('#sign-up').hide()
     $('#cardtl').hide()
     $('#success').hide()
@@ -64,6 +65,8 @@ $(() => {
     $('#cardtl').hide()
     $('#success').hide()
     $('#error').hide()
+    $('#alcr').hide()
+    $('#crcr').hide()
   })
   $('#allcars').click(function () {
     // $('#cardtl').hide()
@@ -83,9 +86,10 @@ $(() => {
 $('#updt').click(function () {
   $('#cardtl').hide()
   $('#success').show()
-  $('#succmsg').text('your car is now added on the list')
+  $('#succmsg').text('your car is now added click the CAR LIST BUTTON to check your car')
 })
 $('#crtnewcar').click(function () {
+  // $('#cardtl', 'input[type="text"]').text(' ')
   $('#cardtl').show()
 })
 // $('body').on('click', '#login-btn', $('#tog').hide())

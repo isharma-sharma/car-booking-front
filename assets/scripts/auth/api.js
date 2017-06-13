@@ -56,11 +56,6 @@ const createCar = function (data) {
     data
   })
     // .then(console.log)
-    .then((response) => {
-      console.log('ajax sucessful')
-      store.carId = response.car.id
-      return store
-    })
 }
 const getAllCars = function () {
   return $.ajax({

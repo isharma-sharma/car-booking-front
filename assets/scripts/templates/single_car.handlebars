@@ -1,8 +1,7 @@
 
-{{#each cars as |car|}}
-<div class="bleh">
+<div class="single">
 <!--we are using data id and not id -->
-<ul id='tog' data-id="{{car.id}}">
+<ul id='tcar' data-id="{{car.id}}">
   <li><small>carId:{{car.id}}</small></li>
   <li><small>Model:{{car.model}}</small></li>
   <li><small>Color-of-car:{{car.color}}</small></li>
@@ -19,4 +18,3 @@
 
 </ul>
 </div>
-{{/each}}

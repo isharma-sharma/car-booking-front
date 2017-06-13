@@ -78,6 +78,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out-btn').on('click', onSignOut)
+  // $('body').on('click', '#cardtl', onCreateCar)
   $('#cardtl').on('submit', onCreateCar)
   $('#allcars').on('click', onGetAllCars)
   $('#updtcars').on('click', onUpdateCar)
