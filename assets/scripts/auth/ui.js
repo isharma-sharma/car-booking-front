@@ -6,6 +6,8 @@ const showCarsTemplate = require('../templates/car-listing.handlebars')
 const signUpSuccess = (data) => {
   console.log(data)
   $('#sign-up').hide()
+  $('#sign-up-btn').hide()
+  $('#sign-in').show()
   $('#success').show()
   $('#error').hide()
   $('#succmsg').text('signUpSuccess now signin')
@@ -19,11 +21,15 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   // $('#show-game-panel').show() will add the id of add car form
   $('#sign-in').hide()
+  $('#login-btn').hide()
+  $('#sign-up-btn').hide()
   $('#cardtl').show()
   $('#success').show()
   $('#error').hide()
   $('#succmsg').text('welcome user')
   $('#allcars').show()
+  $('#sign-out-btn').show()
+  $('#changePassword-btn').show()
   // $('#userId').text(store.userId) will be used to show id of the person who has added the car
 }
 
@@ -36,7 +42,6 @@ const signInFailure = (error) => {
 }
 
 const ChangepasswordSuccess = (data) => {
-  // console.log(data)
   $('#change-password').hide()
   $('#success').show()
   $('#error').hide()
@@ -56,6 +61,9 @@ const signOutSuccess = (data) => {
   $('#change-password').hide()
   // $('#show-game-panel').hide()$('#change-password').hide()
   console.log('on signOutSuccess')
+  $('#success').show()
+  $('#error').hide()
+  $('#succmsg').text('sign-out sucessful')
 }
 
 const signOutFailure = (error) => {
@@ -70,6 +78,7 @@ const createCarSuccess = (data) => {
   // $('#success').show()
   $('#error').hide()
   // $('#succmsg').text('your car is now added on the list')
+  $('#crtnewcar').show()
 }
 
 const createCarFailure = (error) => {
