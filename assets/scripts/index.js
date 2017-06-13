@@ -57,6 +57,9 @@ $(() => {
     $('#cardtl').hide()
     $('#success').hide()
     $('#error').hide()
+    $('#alcr').hide()
+    $('#crcr').hide()
+    $('#crtnewcar').hide()
   })
   $('#sign-out-btn').click(function () {
     $('#sign-in').show()
@@ -67,6 +70,7 @@ $(() => {
     $('#error').hide()
     $('#alcr').hide()
     $('#crcr').hide()
+    $('#crtnewcar').hide()
   })
   $('#allcars').click(function () {
     // $('#cardtl').hide()
@@ -92,4 +96,3 @@ $('#crtnewcar').click(function () {
   // $('#cardtl', 'input[type="text"]').text(' ')
   $('#cardtl').show()
 })
-// $('body').on('click', '#login-btn', $('#tog').hide())

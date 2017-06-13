@@ -38,8 +38,9 @@ const signInFailure = (error) => {
   console.error(error)
   $('#success').hide()
   $('#error').show()
-  $('#errmsg').text('SignIn failed.Please input proper data')
+  $('#errmsg').text('SignIn failed.new user sign-up first')
   $('#cardtl').hide()
+  $('#new').show()
 }
 
 const ChangepasswordSuccess = (data) => {
@@ -62,9 +63,7 @@ const signOutSuccess = (data) => {
   $('#change-password').hide()
   // $('#show-game-panel').hide()$('#change-password').hide()
   console.log('on signOutSuccess')
-  $('#success').show()
   $('#error').hide()
-  $('#succmsg').text('sign-out sucessful')
 }
 
 const signOutFailure = (error) => {
@@ -83,13 +82,12 @@ const createCarSuccess = (data) => {
   // const showcarsHtml = showCarsTemplate({ cars: data.car })
   $('#alcr').append(showsinglecarHtml)
   console.log('create a car done')
-  debugger
 }
 
 const createCarFailure = (error) => {
   $('#success').hide()
   $('#error').show()
-  $('#errmsg').text('input all the field')
+  $('#errmsg').text('input all the field').fadeout()
   console.log(error)
 }
 const getAllCarsSuccess = (data) => {
@@ -99,7 +97,7 @@ const getAllCarsSuccess = (data) => {
   $('#alcr').append(showcarsHtml)
   $('#success').show()
   $('#error').hide()
-  $('#succmsg').text('list of cars')
+  $('#succmsg').text('list of cars').fadeout()
 }
 
 const getAllCarsFailure = (error) => {

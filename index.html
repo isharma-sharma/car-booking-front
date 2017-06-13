@@ -32,15 +32,14 @@
   <div class="container">
     <!-- row -->
     <div class="row">
-      <div class="col-md-2">
-        <!-- Left Bar -->
+      <div class="col-md-4">
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-4">
 
         <!-- Login form-->
 
-        <form id="sign-in" >
+        <form id="sign-in">
           <h2>Login</h2>
           <div class="form-group">
             <label for="email">Email address:</label>
@@ -51,14 +50,14 @@
             <input type="password" name="credentials[password]" class="form-control" id="pwd">
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">Login</button>
+          <button type="submit" class="btn btn-primary btn-block" class ="sin">Login</button>
         </form>
-<!-- </div> -->
+        <!-- </div> -->
         <!-- End :Login form-->
 
         <!-- sign-up form-->
 
-        <form id="sign-up" >
+        <form id="sign-up">
           <h2>Signup</h2>
           <div class="form-group">
             <label for="email">Email address:</label>
@@ -77,7 +76,7 @@
         <!-- End :Signup form-->
 
         <!---change password form begins here -->
-        <form id="change-password" >
+        <form id="change-password">
           <h2>CHANGE PASSWORD</h2>
           <div class="form-group">
             <label for="pwd"> Old-Password:</label>
@@ -89,70 +88,70 @@
           </div>
           <button type="submit" class="btn btn-info btn-block ">Submit</button>
         </form>
-        <!-- change passwordform ends here -->
-        <div class ="container">
-    <!--getAllCars div begins-->
-    <div id ="alcr" class = "col-xs-12">
-            <!--show button to show cars grid starts-->
-    <button id="allcars" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>CARS-LIST</button>
+      </div>
+      <!-- end of the  container which is starting at sign-in-->
+      <!-- change passwordform ends here -->
+      <div id="updatemsg">
+        <div class="alert alert-success alert-dismissable" id="success">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> <span id="succmsg"></span>
+        </div>
+
+        <div class="alert alert-danger alert-dismissable" id="error">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>try again!</strong><span id="errmsg"></span>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <!--getAllCars div begins-->
+        <div id="alcr" class="col-md-6">
+          <!--show button to show cars grid starts-->
+          <button id="allcars" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>CARS-LIST</button>
+        </div>
+
+        <!-- add a button that will be visible after  the submit button for cardtl is click-->
+        <div>
+
+          <button id="crtnewcar" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>add another car</button>
+        </div>
+        <!--show button to show carsgrid ends-->
+        <!--customer  form  to enter his car details begins-->
+        <div class="col-md-6" class="empfor">
+          <form id="cardtl">
+            <h1>Enter your car detail</h1>
+            <div class="form-group">
+              <label for="crmd">Car-Model</label>
+              <input type="text" name="car[model]" class="form-control"  id="Crmd">
+            </div>
+            <div class="form-group">
+              <label for="coc">Color-of-car</label>
+              <input type="text" name="car[color]" class="form-control" id="coc">
+            </div>
+            <div class="form-group">
+              <label for="lpn">licence-plate-no</label>
+              <input type="text" name="car[lcp]" class="form-control" id="lpn">
+            </div>
+            <div class="form-group">
+              <label for="rpnd">Repair-needed</label>
+              <input type="text" name="car[repair]" class="form-control" id="rpnd">
+            </div>
+            <button id="updt" type="submit" class="btn btn-info btn-block ">Submit</button>
+          </form>
+        </div>
+      </div>
+      <!--customer detail form to enter his car detailends-->
+
+      <!--edit formm-->
+
     </div>
-
-    <!-- add a button that will be visible after  the submit button for cardtl is click-->
-    <div>
-
-    <button id="crtnewcar" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>add another car</button>
+    <div class="col-md-2">
+      &nbsp;
+      <!-- Right Bar -->
     </div>
-            <!--show button to show carsgrid ends-->
-          </div>
-        <div id ="updatemsg">
-          <div class="alert alert-success alert-dismissable" id="success">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Success!</strong> <span id="succmsg"></span>
-      </div>
-
-      <div class="alert alert-danger alert-dismissable" id="error">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>try again!</strong><span id="errmsg"></span>
-      </div>
-
-      </div>
-                    <!--show buttontoedit  carends-->
-
-                    <!--getAllCars div ends-->
-                    <!--show button toedit  car begins-->
-<!--customer  form  to enter his car details begins-->
-<div class="col-md-8" class="empfor">
-<form id="cardtl" >
-  <h1>Enter your car detail</h1>
-   <div class="form-group">
-    <label for="crmd">Car-Model</label>
-    <input type="text" name="car[model]" class="form-control" id="Crmd">
   </div>
-  <div class="form-group">
-    <label for="coc">Color-of-car</label>
-    <input type="text" name="car[color]" class="form-control" id="coc">
-  </div>
-  <div class="form-group">
-    <label for="lpn">licence-plate-no</label>
-    <input type="text" name="car[lcp]" class="form-control" id="lpn">
-  </div>
-  <div class="form-group">
-    <label for="rpnd">Repair-needed</label>
-    <input type="text" name="car[repair]" class="form-control" id="rpnd">
-  </div>
-      <button id ="updt" type="submit" class="btn btn-info btn-block ">Submit</button>
-</form>
-</div>
-<!--customer detail form to enter his car detailends-->
 
-<!--edit formm-->
-</div>
-</div>
-<div class="col-md-2">
-    &nbsp;
-    <!-- Right Bar -->
-  </div>
-</div>
+</body>
 
-    </body>
 </html>

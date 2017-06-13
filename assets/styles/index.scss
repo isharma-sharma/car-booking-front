@@ -9,17 +9,19 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
    background : url('./image/cars_garage.png');
    font-style: italic;
    background-size: cover;
+   font-weight: bold;
  }
 
-#tog{ font-size: 30px;
-
+#tog{ font-size: 25px;
+  background: rgba(200, 54, 34, 0.1);
   font-style: italic;
   float:left;
 }
-#tcar{font-size: 30px;
-
+#tcar{font-size: 25px;
+  color: black;
   font-style: italic;
   float:left;
+  background: rgba(200, 54, 34, 0.1);
 
 }
 
