@@ -48,6 +48,7 @@ const ChangepasswordSuccess = (data) => {
   $('#success').show()
   $('#error').hide()
   $('#succmsg').text('your password has been changed')
+  $('#changePassword-btn').hide()
 }
 
 const ChangepasswordFailure = (error) => {
@@ -97,7 +98,7 @@ const getAllCarsSuccess = (data) => {
   $('#alcr').append(showcarsHtml)
   $('#success').show()
   $('#error').hide()
-  $('#succmsg').text('list of cars').fadeout()
+  $('#succmsg').text('list of cars')
 }
 
 const getAllCarsFailure = (error) => {
