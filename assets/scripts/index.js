@@ -2,7 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-
+// const ui = require('./auth/ui.js')
 $(() => {
   setAPIOrigin(location, config)
 })
@@ -73,11 +73,12 @@ $(() => {
     $('#crtnewcar').hide()
   })
   $('#allcars').click(function () {
-    // $('#cardtl').hide()
+  //  $('#cardtl').hide()
+      // let data = {}
+      // ui.getAllCarsSuccess(data)
     $('#allcars').toggle()
-    $('#success').hide()
-    $('#error').hide()
   })
+
   $('.removebtn').click(function () {
     $('#sign-up').hide()
     $('#sign-in').hide()
@@ -90,7 +91,7 @@ $(() => {
 $('#updt').click(function () {
   $('#cardtl').hide()
   $('#success').show()
-  $('#succmsg').text('your car is now added click the CAR LIST BUTTON to check your car')
+  // $('#succmsg').text('your car is now added click the CAR LIST BUTTON to check your car')
 })
 $('#crtnewcar').click(function () {
   // $('#cardtl', 'input[type="text"]').text(' ')

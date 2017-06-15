@@ -15,9 +15,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
    font-size: 25px;
   // opacity: 0.2;
   //  filter: alpha(opacity=50);
+  overflow-x: hidden;
 
    color: #7FFFD4;
  }
+
+.container-fluid {
+  padding: 0;
+}
 
 #tog{ font-size: 28px;
   color: #800000;

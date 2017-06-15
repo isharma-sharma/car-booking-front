@@ -77,7 +77,7 @@ const createCarSuccess = (data) => {
   // $('.empfor', 'input[type="text"]').empty()
   console.log(data)
   $('#error').hide()
-  // $('#succmsg').text('your car is now added on the list')
+  $('#succmsg').text('your car is now added on the list')
   $('#crtnewcar').show()
   const showsinglecarHtml = showSingleCarTemplate({car: data.car})
   // const showcarsHtml = showCarsTemplate({ cars: data.car })
@@ -88,7 +88,7 @@ const createCarSuccess = (data) => {
 const createCarFailure = (error) => {
   $('#success').hide()
   $('#error').show()
-  $('#errmsg').text('input all the field').fadeout()
+  $('#errmsg').text('input all the field')
   console.log(error)
 }
 const getAllCarsSuccess = (data) => {
@@ -99,6 +99,7 @@ const getAllCarsSuccess = (data) => {
   $('#success').show()
   $('#error').hide()
   $('#succmsg').text('list of cars')
+  // <!-- have uncommented because it shows on when their  is no cars in the list -->
 }
 
 const getAllCarsFailure = (error) => {
