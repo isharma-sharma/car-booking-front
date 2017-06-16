@@ -1,8 +1,8 @@
-const api = require('./api')
-const event = require('./event.js')
-const store = require('../store')
+// const api = require('./api')
+// const event = require('./event.js')
+// const store = require('../store')
 const showCarsTemplate = require('../templates/car-listing.handlebars')
-const showSingleCarTemplate=require('../templates/single_car.handlebars')
+const showSingleCarTemplate = require('../templates/single_car.handlebars')
 
 const signUpSuccess = (data) => {
   console.log(data)
@@ -92,13 +92,18 @@ const createCarFailure = (error) => {
   console.log(error)
 }
 const getAllCarsSuccess = (data) => {
-  console.log(data)
-  $('.bleh').empty()
-  const showcarsHtml = showCarsTemplate({ cars: data.cars })
-  $('#alcr').append(showcarsHtml)
-  $('#success').show()
-  $('#error').hide()
-  $('#succmsg').text('list of cars')
+  if (data.cars.length === 0) {
+    $('#success').show()
+    $('#succmsg').text('no cars')
+  } else {
+    console.log(data)
+    $('.bleh').empty()
+    const showcarsHtml = showCarsTemplate({ cars: data.cars })
+    $('#alcr').append(showcarsHtml)
+    $('#success').show()
+    $('#error').hide()
+    $('#succmsg').text('list of cars')
+  }
   // <!-- have uncommented because it shows on when their  is no cars in the list -->
 }
 
