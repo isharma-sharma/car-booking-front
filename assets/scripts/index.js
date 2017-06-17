@@ -76,7 +76,7 @@ $(() => {
   //  $('#cardtl').hide()
       // let data = {}
       // ui.getAllCarsSuccess(data)
-    $('#allcars').toggle()
+    // $('#allcars').toggle()
   })
 
   $('.removebtn').click(function () {
