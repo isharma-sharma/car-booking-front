@@ -71,6 +71,7 @@ $(() => {
     $('#alcr').hide()
     $('#crcr').hide()
     $('#crtnewcar').hide()
+    $('#allcars').hide()
   })
   $('#sign-in').click(function () {
     $('#allcars').show()
