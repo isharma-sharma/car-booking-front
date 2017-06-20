@@ -43,7 +43,7 @@ const signInFailure = (error) => {
   $('#new').show()
 }
 
-const ChangepasswordSuccess = (data) => {
+const changePasswordSuccess = (data) => {
   $('#change-password').hide()
   $('#success').show()
   $('#error').hide()
@@ -51,7 +51,7 @@ const ChangepasswordSuccess = (data) => {
   $('#changePassword-btn').hide()
 }
 
-const ChangepasswordFailure = (error) => {
+const changePasswordFailure = (error) => {
   console.error(error)
   $('#success').hide()
   $('#error').show()
@@ -92,14 +92,16 @@ const createCarFailure = (error) => {
   console.log(error)
 }
 const getAllCarsSuccess = (data) => {
+  $('.bleh').empty()
   if (data.cars.length === 0) {
     $('#success').show()
     $('#succmsg').text('no cars')
+    // $('#succmsg').fadeout()
   } else {
     console.log(data)
-    $('.bleh').empty()
+    // $('.bleh').empty()
     const showcarsHtml = showCarsTemplate({ cars: data.cars })
-    $('#alcr').append(showcarsHtml)
+    $('#alcr').html(showcarsHtml)
     $('#success').show()
     $('#error').hide()
     $('#succmsg').text('list of cars')
@@ -140,8 +142,8 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
-  ChangepasswordSuccess,
-  ChangepasswordFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
   signOutSuccess,
   signOutFailure,
   createCarSuccess,
