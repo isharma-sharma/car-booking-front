@@ -72,11 +72,8 @@ $(() => {
     $('#crcr').hide()
     $('#crtnewcar').hide()
   })
-  $('#allcars').click(function () {
-  //  $('#cardtl').hide()
-      // let data = {}
-      // ui.getAllCarsSuccess(data)
-    // $('#allcars').toggle()
+  $('#sign-in').click(function () {
+    $('#allcars').show()
   })
 
   $('.removebtn').click(function () {
