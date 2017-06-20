@@ -73,7 +73,7 @@ $(() => {
     $('#crtnewcar').hide()
     $('#allcars').hide()
   })
-  $('#sign-in').click(function () {
+  $('.sin').click(function () {
     $('#allcars').show()
   })
 
