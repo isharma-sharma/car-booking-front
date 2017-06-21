@@ -65,6 +65,7 @@ const signOutSuccess = (data) => {
   // $('#show-game-panel').hide()$('#change-password').hide()
   console.log('on signOutSuccess')
   $('#error').hide()
+  $('#allcars').hide()
 }
 
 const signOutFailure = (error) => {
@@ -99,7 +100,8 @@ const getAllCarsSuccess = (data) => {
     // $('#succmsg').fadeout()
   } else {
     console.log(data)
-    // $('.bleh').empty()
+    $('#alcr').show()
+    $('#alcr').empty()
     const showcarsHtml = showCarsTemplate({ cars: data.cars })
     $('#alcr').html(showcarsHtml)
     $('#success').show()
