@@ -7,6 +7,7 @@ const showSingleCarTemplate = require('../templates/single_car.handlebars')
 const signUpSuccess = (data) => {
   console.log(data)
   $('#sign-up').hide()
+  // $('#sign-up').reset()
   $('#sign-up-btn').hide()
   $('#sign-in').show()
   $('#success').show()
@@ -22,6 +23,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   // $('#show-game-panel').show() will add the id of add car form
   $('#sign-in').hide()
+  $('#sign-in').empty()
   $('#login-btn').hide()
   $('#sign-up-btn').hide()
   $('#cardtl').show()
