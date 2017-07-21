@@ -7,7 +7,7 @@ const showSingleCarTemplate = require('../templates/single_car.handlebars')
 const signUpSuccess = (data) => {
   console.log(data)
   $('#sign-up').hide()
-  // $('#sign-up').reset()
+  $('#sign-up').reset()
   $('#sign-up-btn').hide()
   $('#sign-in').show()
   $('#success').show()
