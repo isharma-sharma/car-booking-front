@@ -20,7 +20,7 @@ $(() => {
 
 // $(document).ready(function () {
   // On first load
-  $('#sign-in').show()
+  $('#sign-in').hide()
   $('#sign-up').hide()
   $('#change-password').hide()
   $('#cardtl').hide()
@@ -35,11 +35,12 @@ $(() => {
   // Login function
   $('#login-btn').click(function () {
     $('#sign-in').show()
-    $('#allcars').show()
+    $('#allcars').hide()
     $('#sign-up').hide()
     $('#cardtl').hide()
     $('#success').hide()
     $('#error').hide()
+    $('.hid').hide(1000)
   })
   // sign-up function
   $('#sign-up-btn').click(function () {
@@ -49,6 +50,8 @@ $(() => {
     $('#cardtl').hide()
     $('#success').hide()
     $('#error').hide()
+    $('.hid').hide(1000)
+    $('#allcars').hide()
   })
   $('#changePassword-btn').click(function () {
     $('#sign-up').hide()
@@ -73,7 +76,7 @@ $(() => {
     $('#crtnewcar').hide()
     $('#allcars').hide()
   })
-  $('.sin').click(function () {
+  $('.si').click(function () {
     $('#allcars').show()
   })
 

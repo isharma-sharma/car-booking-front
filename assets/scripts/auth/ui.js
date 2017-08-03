@@ -7,7 +7,6 @@ const showSingleCarTemplate = require('../templates/single_car.handlebars')
 const signUpSuccess = (data) => {
   console.log(data)
   $('#sign-up').hide()
-  $('#sign-up').reset()
   $('#sign-up-btn').hide()
   $('#sign-in').show()
   $('#success').show()
@@ -33,6 +32,7 @@ const signInSuccess = (data) => {
   $('#allcars').show()
   $('#sign-out-btn').show()
   $('#changePassword-btn').show()
+
   // $('#userId').text(store.userId) will be used to show id of the person who has added the car
 }
 
@@ -68,8 +68,8 @@ const signOutSuccess = (data) => {
   console.log('on signOutSuccess')
   $('#error').hide()
   $('#allcars').hide()
+  $('.hid').show(1000)
 }
-
 const signOutFailure = (error) => {
   console.log(error)
   $('#success').hide()

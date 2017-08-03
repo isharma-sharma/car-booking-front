@@ -1,12 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-// div {
-//     background: rgb(200, 54, 25); /* fallback */
-//     background: rgba(200, 54, 34, 0.5);
-//   // background:  #bce6df;/* 50% transparent */
-// }
+$primary-font          : "Titillium Web", "Open Sans", sans-serif;
+$secondary-font 		: Arial, sans-serif;
+
+
+$accent-color          : #f63f3f;
+$secondary-color       : #1b1b1b;
+$secondary-light-color : #242424;
+$strong-color          : #383737;
+$body-color            : #929292;
+
  body{
-   background : url('./image/garage.png') beige;
+  //  background : url('./image/garage.png') beige;
    font-style: italic;
    background-size: cover;
    background-position: left bottom;
@@ -15,15 +20,113 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
    font-size: 25px;
   // opacity: 0.2;
   //  filter: alpha(opacity=50);
-  overflow-x: hidden;
 
-   color: #7FFFD4;
+  //  color: black;
  }
+ header{
+background-color: #b4bac6;
+}
+.mim{
+  font-family:monospace;
+
+}
+li{
+color: $accent-color ;
+}
+
+ .carousel-inner > .item >img
+{
+  align-content:  center;
+  width: 80%;
+  height: 360px;
+
+  border-color: black;
+}
+.carousel-inner {
+background-color: white;
+background-attachment: scroll;
+p{
+  color: $accent-color;
+}
+}
+ body {
+	font-family: $secondary-font;
+	font-size   : 25px;
+	font-weight : 300;
+	line-height : normal;
+	color: $body-color;
+
+	@media screen and (max-width:990px){ font-size: 90% }
+	@media screen and (max-width:768px){ font-size: 80% }
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: $primary-font;
+	color: $strong-color;
+	margin-top: 0;
+}
+
+.counter{
+ 	@extend .col-md-3;
+ 	@extend .col-xs-6;
+
+ 	margin-bottom: 30px;
+ 	border-right: 1px solid #dadada;
+ 	text-align: center;
 
 .container-fluid {
   padding: 0;
 }
+.counter-icon{
+  margin-bottom: 20px;
+}
+.counter-num{
+  // @include em(72);
+  margin-bottom: 0;
+  color: $accent-color;
+  line-height: 70px;
+  font-size: 15px;
+}
+.counter-label{
+  // @include em(18);
+  font-family: $primary-font;
+  color:blue;
+}
+}
+.fullwidth-block{
+	padding: 30px 0 50px;
+	overflow: hidden;
+  text-align: centre;
 
+  .section-desc {
+    text-align: right;
+  }
+}
+
+ /* section title */
+ .section-title{
+ // 	@include em(60);
+
+ 	padding-bottom: 45px;
+ 	position: relative;
+ 	text-align: left;
+ 	font-weight: 400;
+ 	margin: 30px 0 50px;
+ 	color: #052c77;
+
+ 	.dark-bg &{ color: #041b56 }
+
+  &:after{
+ 		content:" ";
+ 		width: 50px;
+ 		height: 5px;
+ 		background-color: rgba(255,255,255,.5);
+ 		position: absolute;
+ 		left:0;
+ 		right:0;
+ 		bottom:0;
+ 		margin: auto;
+ 	}
+ }
 #tog{ font-size: 28px;
   color: #800000;
   background: rgba(248,248,255, 0.2);
@@ -36,7 +139,33 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   float:left;
   background: rgba(248,248,255, 0.2);
 }
+.counter{
+ 	@extend .col-md-3;
+ 	@extend .col-xs-6;
 
+ 	margin-bottom: 30px;
+ 	border-right: 1px solid #dadada;
+ 	text-align: center;
+
+ 	@media screen and (max-width:640px){ border-right: none}
+
+
+ 	&.last{ border-right: none }
+
+ 	.counter-icon{
+ 		margin-bottom: 20px;
+ 	}
+  .counter-num{
+ font-size: 17px;
+ 		margin-bottom: 0;
+ 		color: $accent-color;
+ 		line-height: 70px;
+ 	}
+ 	.counter-label{
+ 	font-size: 20px;
+ 		font-family: $primary-font;
+ 	}
+}
 .removebtn:hover{
   color: blue;
 }
@@ -52,4 +181,135 @@ color: #228B22;
 }
 .empfor{
   float: right;
+}
+.team{
+	text-align: center;
+	margin-bottom: 30px;
+	.team-image{
+		overflow: hidden;
+		border-radius: 50%;
+		margin-bottom: 20px;
+		width: 250px;
+		height: 250px;
+		display: inline-block;
+
+		img{
+			display: block;
+		}
+	}
+	.team-name{
+		// @include h1;
+		color: white;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+	.team-desc{
+		font-size: 15px;
+	}
+	.team-social{
+		margin-top: 20px;
+		a{
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			display: inline-block;
+			background-color: $accent-color;
+			color: white;
+			text-align: center;
+			line-height: 2.3;
+			transition: .3s ease;
+
+			&:hover{
+				background-color: lighten( $accent-color, 10%);
+			}
+		}
+	}
+	&.image-left{
+		padding-left: 370px;
+		position: relative;
+		min-height: 250px;
+		text-align: left;
+		margin: 50px 0 100px;
+		box-sizing: padding-box;
+
+		@media screen and (max-width: 990px){ padding-left: 300px }
+		@media screen and (max-width: 640px){
+			padding-left: 0;
+			text-align: center;
+		}
+
+		.team-image{
+			width: 260px;
+			height: 260px;
+			border: 10px solid #dedede;
+			position: absolute;
+			left:0;
+			top:0;
+
+			@media screen and (max-width: 640px){
+				position: relative;
+				margin: 0 auto 30px;
+			}
+
+			img{
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		.team-name{
+			text-transform: uppercase;
+			color: $accent-color;
+			font-size: 17px;;
+		}
+		.team-desc{
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		.team-social{
+			a{
+				width: 45px;
+				height: 45px;
+				line-height: 2.4;
+				// @include em(20);
+			}
+		}
+	}
+}
+
+img {
+  display: inline;
+}
+.fullwidth-block{
+  h2{
+    font-size:30px;
+    font-weight: bold;
+  }
+}
+.feature-icon{
+  background:grey;
+}
+.logo {
+  img{
+  border-color: blue;
+}
+}
+footer{
+   position: relative;
+   left: 0px;
+   bottom: 100px;
+   height: 100px;
+   width: 100%;
+  //  background: #999;
+   color:#041b56;
+   h1{
+     font-family: monospace;
+     font-weight: bold;
+   }
+}
+.space {
+  top: 50px;
+  border-width: thick;
+  border-color: white;
 }
